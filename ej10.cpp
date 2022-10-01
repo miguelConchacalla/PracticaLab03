@@ -1,30 +1,28 @@
 #include <iostream>
-
 using namespace std;
 
+int esPrimo(int n) {
+	for (int x = 2; x < n / 2; x++) {
+		if (n % x == 0) {
+			return 0;
+		}
+	}
+	return n;
+}
 
-long mill(unsigned long mill)
-{
-    unsigned long long i;
-    unsigned long long j;
-    unsigned long long s;
+long mill(unsigned long mill) {
 
-    for (i = 1; i < mill; i ++) {
-        unsigned long long ci{0};
-        for (j = 1; j <= i; j ++) {
-            if (i % j == 0) {
-                ci += 1;
-            }
-        }
-        if (ci == 2) {
-            s += i;
-        } 
+    long long s{2};
+    int i = 3;
+
+    for (i; i < mill; i++) {
+        esPrimo(i);
     }
-    return s;
+
 }
 
 int main()
 {
-    cout<<mill(1000000);
+    cout<<mill(10);
     return 0;
 }
